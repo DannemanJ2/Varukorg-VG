@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Beställningssida</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="nav-item"><a href="index.html" class="nav-link active">Webshoppen</a></li>
+            <li role="nav-item"><a href="om-oss.html" class="nav-link">Om oss</a></li>
+            <li role="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="bestallning">
+        <h2>Beställning</h2>
+        <form id="myForm">
+            <div class="form-group">
+                <label for="name">Namn</label>
+                <input type = "text" class="form-control" id="name" name = "name" placeholder = "Namn">
+            </div>
+            <div class="form-group">
+                <label for="email">E-postadress</label>
+                <input type = "email" class="form-control" id="email" name="email" placeholder = "Email">
+            </div>
+            <div class="form-group">
+                <label for="telefonnr">Telefonnummer</label>
+                <input type = "tel" class="form-control" id="telefonnr" name="telefonnr" placeholder = "Telefonnummer">
+            </div>
+            <div class="form-group">
+                <label for="address">Leveransaddress</label>
+                <input type = "text" class="form-control" id="address" name ="address" placeholder = "Address">
+            </div>
+            <br>
+        <button type = "submit" class="btn btn-primary" onclick = "orderProduct()">Lägg beställning</button>
+        </form>
+      </div>
+
+    <div class="row marketing">
+        <div class="col-lg-12">
+          <div id = "resultat">
+
+          </div>
+        </div>
+    </div>
+        
+
+      <footer class="footer">
+        <p>&copy; 2024 Webshoppen, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
