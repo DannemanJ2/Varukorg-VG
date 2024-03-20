@@ -12,6 +12,7 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script defer src="js/script.js"></script>
 </head>
 
 <body>
@@ -27,26 +28,42 @@
       </nav>
     </div>
 
-    <div class="bestallning">
+    <div class="container" class="bestallning">
       <h2>Beställning</h2>
       <form id="myForm">
-        <div class="form-group">
-          <label for="name">Namn</label>
+        <div class="input-control">
+          <label for="name" style="font-weight: 600;">Namn</label>
           <input type="text" class="form-control" id="name" name="name" placeholder="Namn">
+          <div class="error"></div>
         </div>
-        <div class="form-group">
-          <label for="email">E-postadress</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+        <div class="input-control">
+          <label for="email" style="font-weight: 600;">E-postadress</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          <div class="error"></div>
         </div>
-        <div class="form-group">
-          <label for="telefonnr">Telefonnummer</label>
+        <div class="input-control">
+          <label for="telefonnr" style="font-weight: 600;">Telefonnummer</label>
           <input type="tel" class="form-control" id="telefonnr" name="telefonnr" placeholder="Telefonnummer">
+          <div class="error"></div>
         </div>
-        <div class="form-group">
-          <label for="address">Leveransaddress</label>
+        <div class="input-control">
+          <label for="address" style="font-weight: 600;">Leveransaddress</label>
           <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+          <div class="error"></div>
         </div>
-        <br>
+        <div class="input-control">
+          <label for="address" style="font-weight: 600;">Postnummer</label>
+          <input type="text" class="form-control" id="postnr" name="postnr" placeholder="Postnr, 5 tecken">
+          <div class="error"></div>
+        </div>
+        <div class="input-control"></div>
+          <label for="address" style="font-weight: 600;">Ort</label>
+          <input type="text" class="form-control" id="ort" name="ort" placeholder="Ort">
+          <div class="error"></div>
+        </div>
+          
+        <br><br>
+
         <button type="submit" class="btn btn-primary" onclick="orderProduct()">Lägg beställning</button>
       </form>
     </div>
@@ -67,9 +84,10 @@
 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/beställningsscript.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
