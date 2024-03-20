@@ -11,7 +11,7 @@ async function getProducts() {
 function displayProducts(products) {
     const productsContainer = document.getElementById('products');
     products.forEach(product => {
-    const productElement = document.createElement('div');
+        const productElement = document.createElement('div');
         productElement.classList.add('col-md-4', 'product');
         productElement.innerHTML = `
         <div class ="product-content">
@@ -25,29 +25,32 @@ function displayProducts(products) {
         </div>
         `;
         productsContainer.appendChild(productElement);
-    });
-    addOrderButtonListeners();
-}
-
-function addOrderButtonListeners(){
-    const orderButtons = document.querySelectorAll('.order-btn')
-    orderButtons.forEach(button =>{
-        button.addEventListener('click', () => {
+        // Hämta den skapade knappen för produkten
+        const orderButton = productElement.querySelector('.order-btn');
+        // Lägg till eventlyssnare för knappen
+        orderButton.addEventListener('click', () => {
+            // Lagra den valda produkten i localStorage
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            // Navigera till beställningssidan
             window.location.href = 'bestallningssida.html';
-        })
-    })
+        });
+    });
 }
-
 getProducts();
 
+/*
+document.getElementById('myForm').addEventListener('submit', orderProduct);
+
 function orderProduct(e){
-    let orderName = document.getElementById('name');
-    let orderEmail = document.getElementById('email');
-    let orderNumber = document.getElementById('telefonnr');
-    let orderAddress = document.getElementById('address');
-    let product = document.getElementsByClassName('product-content').title
+    // Get form values
+    let orderName = document.getElementById('name').value;
+    console.log(orderName);
+    let orderEmail = document.getElementById('email').value;
+    let orderNumber = document.getElementById('telefonnr').value;
+    let orderAddress = document.getElementById('address').value;
+    //let product = document.getElementsByClassName('product-content').value
     console.log(product)
-    e.preventDefault();
+    
     var order = {
         name: orderName,
         email: orderEmail,
@@ -56,5 +59,7 @@ function orderProduct(e){
     }
 
     console.log(order);
+    e.preventDefault();
     
 }
+*/
