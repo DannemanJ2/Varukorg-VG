@@ -101,6 +101,11 @@ body {
   }
 }
 
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
 .input-control input:focus{
   outline: 0;
 }
@@ -113,8 +118,8 @@ body {
 }
 .input-control .error{
   border-color: #ff3860;
-  font-size: 9px;
-  height: 13px;
+  font-size: 11px;
+  height: 14px;
 }
 
 
