@@ -85,7 +85,7 @@ const validInputs = () => {
 
     if(userNameValue === ""){
         setError(userName, 'Skriv in ditt namn')
-    }else if(userNameValue.length > 2 || userNameValue.length < 50){
+    }else if(userNameValue.length < 2 || userNameValue.length > 50){
         setError(userName, 'Ditt namn måste vara mellan 2 - 50 tecken långt')
     }else{
         setSuccess(userName)
@@ -104,7 +104,7 @@ const validInputs = () => {
 
     if(telValue === ""){
         setError(tel, 'Skriv in ditt telefonummer')
-    }else if(telValue.length < 50){
+    }else if(telValue.length > 50){
         setError(tel, 'Ditt telefonummer får max innehålla 50 tecken')
     }else{
         setSuccess(tel)
@@ -112,15 +112,15 @@ const validInputs = () => {
 
     if(adressValue === ""){
         setError(adress, 'Skriv in din adress')
-    }else if(adressValue.length < 50 || adressValue.length > 2){
+    }else if(adressValue.length < 2 || adressValue.length > 50){
         setError(adress, 'Adressen måste innehålla mellan 2 - 50 tecken')
     }else{
         setSuccess(adress)
     }
     
     if(postnrValue === ""){
-        setError(postnr, 'Skriv in din postnummer')
-    }else if(postnrValue.length < 5){
+        setError(postnr, 'Skriv in ditt postnummer')
+    }else if(postnrValue.length != 5){
         setError(postnr, 'Skriv in korrekt postnummer, 5 tecken')
     }else{
         setSuccess(postnr)
@@ -128,7 +128,7 @@ const validInputs = () => {
     
     if(cityValue === ""){
         setError(city, 'Skriv in din ort')
-    }else if(cityValue.length > 2 || cityValue.length < 50){
+    }else if(cityValue.length < 2 || cityValue.length > 50){
         setError(city, 'Ortnamnet måste innehålla mellan 2 - 50 tecken')
     }else{
         setSuccess(city)
