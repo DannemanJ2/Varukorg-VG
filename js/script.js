@@ -74,6 +74,13 @@ const validEmail = email => {
     const charSet =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return charSet.test(String(email).toLocaleLowerCase())
 }
+const validPostnr = postnr => {
+    return /^\d+$/.test(postnr);
+}
+
+const validTel = tel => {
+    return /^[\d()-]+$/.test(tel)
+}
 
 const validInputs = () => {
     const userNameValue = userName.value.trim()
@@ -106,6 +113,8 @@ const validInputs = () => {
         setError(tel, 'Skriv in ditt telefonummer')
     }else if(telValue.length > 50){
         setError(tel, 'Ditt telefonummer får max innehålla 50 tecken')
+    }else if(!validTel(telValue)){
+        setError(tel, 'Ditt telefonummer får bara innehålla siffror, bindestreck och parenteser')
     }else{
         setSuccess(tel)
     }
@@ -122,6 +131,8 @@ const validInputs = () => {
         setError(postnr, 'Skriv in ditt postnummer')
     }else if(postnrValue.length != 5){
         setError(postnr, 'Skriv in korrekt postnummer, 5 tecken')
+    }else if(!validPostnr(postnrValue)){
+        setError(postnr, 'Skriv in korrekt postnummer, får bara innehålla siffror')
     }else{
         setSuccess(postnr)
     }
