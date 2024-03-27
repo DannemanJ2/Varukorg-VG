@@ -1,6 +1,5 @@
-const searchParams = new URLSearchParams(window.location.search);
-const selectedProduct = JSON.parse(searchParams.get('selectedProduct'));
-const customer = JSON.parse(searchParams.get('customer'))
+const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+const customer = JSON.parse(localStorage.getItem('customer'))
 
 if (selectedProduct) {
     // Visa den valda produkten på beställningssidan

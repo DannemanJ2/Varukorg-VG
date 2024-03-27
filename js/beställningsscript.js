@@ -26,7 +26,8 @@ form.addEventListener('submit', e => {
 
     if(validInputs()){
         const customer = {userName: userName.value, email: email.value, tel: tel.value, adress: adress.value, postnr: postnr.value, city: city.value};
-        window.location.href = 'bekräftelsesida.html?selectedProduct=' + JSON.stringify(selectedProduct) + '&customer=' + JSON.stringify(customer);
+        localStorage.setItem('customer', JSON.stringify(customer));
+        window.location.href = "bekräftelsesida.html";
     }
 })
 
