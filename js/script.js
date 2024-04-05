@@ -10,11 +10,6 @@ async function getProducts() {
         console.error('Error fetching products:', error);
     }
 }
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready)
-// } else {
-//     ready()
-// }
 if (document.readyState == 'complete') {
     ready();
 } else {
@@ -168,8 +163,6 @@ function displayCart() {
         cartItems.append(cartRow)
     });
     updateTotal();
-
-
 }
 function displayProducts(products) {
     const productsContainer = document.getElementById('products');

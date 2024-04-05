@@ -1,10 +1,17 @@
 const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
 const customer = JSON.parse(localStorage.getItem('customer'))
 
-if (selectedProduct) {
+
     // Visa den valda produkten på beställningssidan
     const resultatDiv = document.getElementById('resultat2');
     var storage = JSON.parse(localStorage.getItem('storedProducts'))
+    var htmlTemp = ``
+    for(var i = 0; i < storage.length; i++) {
+        var temp = `
+        <p>${storage[i].title}</p>
+        `
+        htmlTemp = htmlTemp + temp
+    }
     resultatDiv.innerHTML = `
         
         <div>
@@ -17,16 +24,11 @@ if (selectedProduct) {
         <p><strong>Stad:</strong> ${customer.city}</p>
         </div>
         <h3>Du beställde:</h3>
+        <div>
+        ${htmlTemp}
+        </div>
+
         
     `;
-    for(var i = 0; i < storage.length; i++) {
-        var temp = `
-        <p><strong>Titel:</strong> ${storage[i].title}</p>
-        <p><strong>Pris:</strong> $${storage[i].price}</p>
-        <p><strong>Beskrivning:</strong> ${storage[i].description}</p>
-        `
-        resultatDiv.append(temp)
-        resultatDiv.append(`</div>`)
-    }
     
-}
+    
