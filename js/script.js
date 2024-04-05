@@ -22,6 +22,7 @@ if (document.readyState == 'complete') {
 }
 function ready() {
     displayCart();
+    
     var removeCartItemsBtn = document.getElementsByClassName('remove-btn')
     for (var i = 0; i < removeCartItemsBtn.length; i++) {
         var button = removeCartItemsBtn[i]
@@ -40,6 +41,12 @@ function ready() {
         var button = addToCartBtn[i]
         button.addEventListener('click', addToCart)
     }
+    var placeOrderBtn = document.getElementsByClassName('place-order-btn')
+    placeOrderBtn[0].addEventListener('click', placeOrder)
+}
+
+function placeOrder(event) {
+    window.location.href = 'bestallningssida.html'
 }
 function clearCart() {
     localStorage.clear()
