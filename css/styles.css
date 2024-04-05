@@ -170,4 +170,12 @@ body {
   float: right;
 }
 
+.cartItems{
+  display: flex;
+  flex-direction: column;
+}
+
+.cart{
+  padding: 10px;
+}
 
